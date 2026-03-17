@@ -83,7 +83,7 @@ const featuredProjects = [
     title: "Hedge Fund Solana Program",
     description:
       "Vault contract with flash-loan swap execution and hash-based approval flow for limit and DCA order automation on Jupiter.",
-    code: "https://github.com/fuyofulo/fund_contract",
+    code: "https://github.com/fuyofulo/hedgefund-as-a-service",
     tags: ["Solana", "Rust", "Anchor"],
     preview: null,
   },
