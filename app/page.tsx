@@ -315,7 +315,7 @@ export default function Home() {
                     className="micro-button--lime"
                     iconSrc="/assets/gmail-svgrepo-com.svg"
                     label="email"
-                    value="fuyofulo@gmail.com"
+                    value="pheonixdiaz625@gmail.com"
                   />
                 </div>
 
