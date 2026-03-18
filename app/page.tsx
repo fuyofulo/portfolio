@@ -39,7 +39,7 @@ const highlights = [
     title: "100xDevs - Super 30",
     timeline: "Sep 2025 – Mar 2026",
     description:
-      "Hacker house style program at 100xCampus, Noida focused on backend projects, Solana, and distributed systems.",
+      "Hacker house style program at 100xSchool, Noida focused on backend projects, Solana, and distributed systems.",
     href: "https://x.com/100xSchool",
     logo: devsLogo,
   },
