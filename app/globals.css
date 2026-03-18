@@ -83,7 +83,7 @@ img {
   position: relative;
   z-index: 1;
   width: min(1280px, calc(100% - 20px));
-  margin: 14px auto 36px;
+  margin: 10px auto 28px;
 }
 
 .top-strip {
@@ -91,19 +91,19 @@ img {
   grid-template-columns: auto 1fr auto;
   gap: 8px;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .top-strip__badge {
   border: 2px solid var(--line-dark);
   border-right-color: var(--bevel-shadow);
   border-bottom-color: var(--bevel-shadow);
-  padding: 7px 12px;
+  padding: 5px 10px;
   background: linear-gradient(180deg, #fff6b4, #ffe170);
   box-shadow: 4px 4px 0 var(--shadow);
   color: #81300c;
   font-family: var(--display);
-  font-size: 0.74rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -122,9 +122,9 @@ img {
 .marquee span {
   display: inline-block;
   min-width: 100%;
-  padding: 8px 0;
+  padding: 6px 0;
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: #083481;
   animation: marquee-scroll 22s linear infinite;
@@ -136,8 +136,32 @@ img {
 }
 
 .content-grid {
-  grid-template-columns: minmax(0, 1.3fr) minmax(285px, 0.72fr);
-  margin-top: 12px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.82fr);
+  margin-top: 10px;
+  align-items: start;
+}
+
+.content-side {
+  display: grid;
+  gap: 10px;
+  grid-template-rows: auto auto;
+  align-self: start;
+}
+
+.content-side .window-body {
+  padding: 12px;
+}
+
+.content-side .newsletter-box {
+  gap: 11px;
+}
+
+.highlights-window {
+  align-self: start;
+}
+
+.highlights-window .window-body {
+  flex: 0 0 auto;
 }
 
 .window {
@@ -157,12 +181,12 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 7px 10px;
+  padding: 5px 9px;
   border-bottom: 2px solid var(--line-mid);
   background: linear-gradient(90deg, #0153ca 0%, #16b0df 100%);
   color: white;
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -175,15 +199,15 @@ img {
 
 .window-actions span {
   display: block;
-  width: 11px;
-  height: 11px;
+  width: 10px;
+  height: 10px;
   border: 1px solid rgba(255, 255, 255, 0.78);
   background: rgba(255, 255, 255, 0.22);
 }
 
 .window-body {
   flex: 1;
-  padding: 14px;
+  padding: 12px;
   background:
     radial-gradient(circle at 1px 1px, rgba(76, 102, 170, 0.12) 1px, transparent 0),
     linear-gradient(180deg, rgba(255, 255, 255, 0.58), transparent 54%),
@@ -265,6 +289,12 @@ p {
   min-width: 0;
 }
 
+.hero-copy-panel > .eyebrow,
+.hero-copy-panel > h1 {
+  position: relative;
+  top: -10px;
+}
+
 .hero-smiley {
   display: grid;
   justify-items: center;
@@ -321,16 +351,16 @@ p {
   align-items: center;
   justify-content: center;
   gap: 7px;
-  min-height: 34px;
+  min-height: 30px;
   border: 2px solid var(--line-dark);
   border-top-color: var(--bevel-light);
   border-left-color: var(--bevel-light);
-  padding: 7px 12px;
+  padding: 6px 10px;
   background: linear-gradient(180deg, #ffffff, #bcd9ff);
   box-shadow: 4px 4px 0 var(--shadow);
   color: #06357f;
   font-family: var(--mono);
-  font-size: 0.74rem;
+  font-size: 0.69rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -346,8 +376,8 @@ p {
 }
 
 .micro-button__icon {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
 }
 
@@ -417,74 +447,112 @@ p {
 
 .highlight-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
-.highlight-card,
 .project-card,
 .carousel-card {
   border: 2px solid rgba(1, 83, 202, 0.18);
   background: rgba(255, 255, 255, 0.75);
 }
 
-.highlight-card {
-  display: grid;
-  grid-template-columns: 52px minmax(0, 1fr);
-  gap: 10px;
-  align-items: center;
-  padding: 10px;
-  border: 2px solid rgba(1, 83, 202, 0.18);
-  background: transparent;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-}
-
-.highlight-card:hover,
 .project-card:hover,
 .carousel-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 18px rgba(0, 61, 145, 0.12);
 }
 
-.highlight-card__copy {
+.highlight-experience {
   display: grid;
-  gap: 2px;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 10px 2px;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid rgba(17, 17, 17, 0.14);
+  transition: background-color 160ms ease;
 }
 
-.highlight-card__title {
+.highlight-experience:first-child {
+  padding-top: 2px;
+}
+
+.highlight-experience:last-child {
+  padding-bottom: 2px;
+  border-bottom: 0;
+}
+
+.highlight-experience:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.highlight-experience .logo-stamp {
+  width: 34px;
+  height: 34px;
+  margin-top: 2px;
+}
+
+.highlight-experience__copy {
+  display: grid;
+  gap: 4px;
+}
+
+.highlight-experience__meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.highlight-experience__title {
   color: #111111;
-  text-shadow: none;
+  font-size: 0.98rem;
+  line-height: 1.1;
 }
 
-.highlight-card__copy span {
+.highlight-experience__timeline {
+  color: #6d4f0d;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex: none;
+}
+
+.highlight-experience__copy p {
+  margin: 0;
+  max-width: 84ch;
+  color: #212121;
+  font-family: var(--body);
   font-size: 0.9rem;
-  line-height: 1.25;
-  color: #17346f;
+  line-height: 1.3;
 }
 
 .newsletter-box {
   display: grid;
-  gap: 18px;
-  min-height: 100%;
-  height: 100%;
-  grid-template-rows: auto 1fr auto;
+  gap: 12px;
+  grid-template-rows: auto auto auto;
 }
 
 .newsletter-box__header {
   align-items: center;
   justify-content: start;
-  gap: 14px;
+  gap: 10px;
 }
 
 .newsletter-box .logo-stamp {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
 }
 
 .newsletter-box__title {
   margin-top: 0;
   color: #112344;
-  font-size: 1.55rem;
+  font-size: 1.34rem;
   font-weight: 800;
   line-height: 1.05;
   letter-spacing: -0.04em;
@@ -494,10 +562,10 @@ p {
 .newsletter-box__description {
   color: #112344;
   font-family: var(--body);
-  font-size: 1rem;
-  line-height: 1.55;
+  font-size: 0.93rem;
+  line-height: 1.42;
   align-self: start;
-  padding-left: 24px;
+  padding-left: 12px;
 }
 
 .section-window {

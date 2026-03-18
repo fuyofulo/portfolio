@@ -7,6 +7,7 @@ import { TechPill } from "../components/tech-pill";
 import { WhiteFireSmiley } from "../components/white-fire-smiley";
 import devsLogo from "../images/100xdevs_logo.jpg";
 import meteoraPreview from "../images/tui.png";
+import mediumLogo from "../images/medium-logo.jpg";
 import substackLogo from "../images/substack.png";
 import superteamLogo from "../images/superteam_logo.jpg";
 import tksLogo from "../images/tks_logo_2.jpg";
@@ -31,30 +32,40 @@ const socials = [
   },
 ] as const;
 
+const mediumLink = "https://medium.com/@fuyofulo";
+
 const highlights = [
   {
-    title: "The Knowledge Society",
-    detail: "Alumni, 2022-2024",
-    href: "https://www.tks.world/",
-    logo: tksLogo,
-  },
-  {
-    title: "100xDevs",
-    detail: "Student of Super 30 2.0",
+    title: "100xDevs - Super 30",
+    timeline: "Sep 2025 – Mar 2026",
+    description:
+      "Hacker house style program at 100xCampus, Noida focused on backend projects, Solana, and distributed systems.",
     href: "https://x.com/100xSchool",
     logo: devsLogo,
   },
   {
-    title: "Superteam",
-    detail: "Member, Solana India Fellowship 2025",
+    title: "Superteam - Solana India Fellowship",
+    timeline: "Jul 2025 – Sep 2025",
+    description:
+      "Advanced Rust and Solana fellowship focused on system design, Solana infra, and Anchor development. Graduated top 20 with a $3000 stipend.",
     href: "https://x.com/superteam",
     logo: superteamLogo,
   },
   {
     title: "Rektoff",
-    detail: "Solana and Rust Security bootcamp",
+    timeline: "Jan 2026 – Mar 2026",
+    description:
+      "Focused on low-level Rust and Solana security with a final capstone project auditing a complex Solana program.",
     href: "https://x.com/rektoff_xyz",
     logo: rektoffLogo,
+  },
+  {
+    title: "The Knowledge Society",
+    timeline: "2022-2024",
+    description:
+      "Global Accelerator for the world's most ambitious teens. Pursued Brain Computer Interfaces alongside technical challenges from MasterCard, Shell, IKEA and more.",
+    href: "https://www.tks.world/",
+    logo: tksLogo,
   },
 ] as const;
 
@@ -315,7 +326,7 @@ export default function Home() {
                     className="micro-button--lime"
                     iconSrc="/assets/gmail-svgrepo-com.svg"
                     label="email"
-                    value="pheonixdiaz625@gmail.com"
+                    value="fuyofulo@gmail.com"
                   />
                 </div>
 
@@ -340,45 +351,77 @@ export default function Home() {
         </header>
 
         <section className="content-grid">
-          <Window title="highlights.webring">
+          <Window title="highlights.webring" className="highlights-window">
             <div className="highlight-list">
               {highlights.map((item) => (
                 <a
                   key={item.title}
-                  className="highlight-card"
+                  className="highlight-experience"
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
                 >
                   <LogoStamp src={item.logo} alt={`${item.title} logo`} />
-                  <div className="highlight-card__copy">
-                    <strong className="highlight-card__title">{item.title}</strong>
-                    <span>{item.detail}</span>
+                  <div className="highlight-experience__copy">
+                    <div className="highlight-experience__meta">
+                      <strong className="highlight-experience__title">
+                        {item.title}
+                      </strong>
+                      {"timeline" in item && item.timeline ? (
+                        <span className="highlight-experience__timeline">
+                          {item.timeline}
+                        </span>
+                      ) : null}
+                    </div>
+                    <p>{item.description}</p>
                   </div>
                 </a>
               ))}
             </div>
           </Window>
 
-          <Window title="newsletter_signup.htm">
-            <div className="newsletter-box">
-              <div className="newsletter-box__header">
-                <LogoStamp src={substackLogo} alt="Substack logo" />
-                <p className="newsletter-box__title">fuyo&apos;s public diary</p>
+          <div className="content-side">
+            <Window title="newsletter_signup.htm">
+              <div className="newsletter-box">
+                <div className="newsletter-box__header">
+                  <LogoStamp src={substackLogo} alt="Substack logo" />
+                  <p className="newsletter-box__title">fuyo&apos;s public diary</p>
+                </div>
+                <p className="newsletter-box__description">
+                  Notes on what I’m building, learning, and figuring out in
+                  public.
+                </p>
+                <a
+                  className="micro-button micro-button--lime"
+                  href="https://fuyofulo.substack.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  go to newsletter
+                </a>
               </div>
-              <p className="newsletter-box__description">
-              notes on what I’m building, learning, and figuring out in public.
-              </p>
-              <a
-                className="micro-button micro-button--lime"
-                href="https://fuyofulo.substack.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                go to newsletter
-              </a>
-            </div>
-          </Window>
+            </Window>
+
+            <Window title="medium_articles.htm">
+              <div className="newsletter-box">
+                <div className="newsletter-box__header">
+                  <LogoStamp src={mediumLogo} alt="Medium logo" />
+                  <p className="newsletter-box__title">Medium</p>
+                </div>
+                <p className="newsletter-box__description">
+                  Technical deep dive articles into various fields like distributed systems, brain computer interfaces and computer vision.
+                </p>
+                <a
+                  className="micro-button micro-button--lime"
+                  href={mediumLink}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  go to medium
+                </a>
+              </div>
+            </Window>
+          </div>
         </section>
 
         <Window title="projects/featured" className="section-window">
