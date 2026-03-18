@@ -82,7 +82,7 @@ const featuredProjects = [
     label: "Solana Anchor Program",
     title: "Hedge Fund Solana Program",
     description:
-      "Vault contract with flash-loan swap execution and hash-based approval flow for limit and DCA order automation on Jupiter.",
+      "This program implements a hedge-fund style pool on Solana. Managers create funds, investors deposit SOL to receive shares based on NAV, and managers trade whitelisted tokens using an atomic borrow/settle pattern. The platform controls a global whitelist and executes limit/DCA orders and strategy rebalances via a trusted keeper.",
     code: "https://github.com/fuyofulo/hedgefund-as-a-service",
     tags: ["Solana", "Rust", "Anchor"],
     preview: null,
