@@ -52,7 +52,7 @@ const highlights = [
     logo: superteamLogo,
   },
   {
-    title: "Rektoff",
+    title: "Rektoff - Cohort 3",
     timeline: "Jan 2026 – Mar 2026",
     description:
       "Focused on low-level Rust and Solana security with a final capstone project auditing a complex Solana program. Graduated with the strongest report in the entire cohort.",
