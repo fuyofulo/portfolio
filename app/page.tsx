@@ -55,7 +55,7 @@ const highlights = [
     title: "Rektoff",
     timeline: "Jan 2026 – Mar 2026",
     description:
-      "Focused on low-level Rust and Solana security with a final capstone project auditing a complex Solana program.",
+      "Focused on low-level Rust and Solana security with a final capstone project auditing a complex Solana program. Graduated with the strongest report in the entire cohort.",
     href: "https://x.com/rektoff_xyz",
     logo: rektoffLogo,
   },
