@@ -604,6 +604,15 @@ p {
   object-fit: contain;
 }
 
+.project-card__preview--axoria {
+  aspect-ratio: 16 / 8.1;
+}
+
+.project-card__preview--axoria img {
+  object-fit: cover;
+  object-position: center top;
+}
+
 .project-card__preview--fallback {
   display: grid;
   justify-content: center;

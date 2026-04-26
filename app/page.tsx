@@ -6,6 +6,7 @@ import { ProjectCarousel } from "../components/project-carousel";
 import { TechPill } from "../components/tech-pill";
 import { WhiteFireSmiley } from "../components/white-fire-smiley";
 import devsLogo from "../images/100xdevs_logo.jpg";
+import axoriaPreview from "../images/axoria.png";
 import meteoraPreview from "../images/tui.png";
 import mediumLogo from "../images/medium-logo.jpg";
 import substackLogo from "../images/substack.png";
@@ -71,6 +72,17 @@ const highlights = [
 
 const featuredProjects = [
   {
+    label: "Stablecoin Infra",
+    title: "Axoria",
+    description:
+      "Payouts and collections infrastructure for stablecoin teams, built around deterministic workflows, on-chain reconciliation, and proof-backed USDC movement on Solana.",
+    code: "https://github.com/fuyofulo/stablecoin_infra",
+    live: "https://axoria.fun",
+    tags: ["Node.js", "TypeScript", "Prisma", "React", "Rust"],
+    preview: axoriaPreview,
+    previewClassName: "project-card__preview--axoria",
+  },
+  {
     label: "Solana Infra",
     title: "Meteora DLMM Indexer",
     description:
@@ -88,15 +100,6 @@ const featuredProjects = [
     article: "https://x.com/fuyofulo/status/2020674400404881615",
     tags: ["Rust", "gRPC"],
     preview: raftPreview,
-  },
-  {
-    label: "Solana Anchor Program",
-    title: "Hedge Fund Solana Program",
-    description:
-      "This program implements a hedge-fund style pool on Solana. Managers create funds, investors deposit SOL to receive shares based on NAV, and managers trade whitelisted tokens using an atomic borrow/settle pattern. The platform controls a global whitelist and executes limit/DCA orders and strategy rebalances via a trusted keeper.",
-    code: "https://github.com/fuyofulo/hedgefund-as-a-service",
-    tags: ["Solana", "Rust", "Anchor"],
-    preview: null,
   },
 ] as const;
 
@@ -137,11 +140,18 @@ const otherProjects = [
     tags: ["Rust"],
   },
   {
-    title: "Axoria",
+    title: "SPL Token Launchpad",
     description:
       "Solana token launchpad for devnet airdrops, token creation, and mint flows.",
     code: "https://github.com/fuyofulo/axoria",
     tags: ["Solana", "React"],
+  },
+  {
+    title: "Hedge Fund Solana Program",
+    description:
+      "Hedge-fund style Solana program for pooled capital, whitelisted asset trading, and keeper-driven execution for strategy rebalances and order automation.",
+    code: "https://github.com/fuyofulo/hedgefund-as-a-service",
+    tags: ["Solana", "Rust", "Anchor"],
   },
   {
     title: "CFD Platform",
@@ -238,7 +248,14 @@ function FeaturedProjectCard({
   return (
     <article className="project-card">
       {project.preview ? (
-        <div className="project-card__preview">
+        <div
+          className={[
+            "project-card__preview",
+            "previewClassName" in project ? project.previewClassName : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
           <Image
             src={project.preview}
             alt={`${project.title} preview`}
@@ -266,6 +283,11 @@ function FeaturedProjectCard({
           <a href={project.code} target="_blank" rel="noreferrer">
             code
           </a>
+          {"live" in project && project.live ? (
+            <a href={project.live} target="_blank" rel="noreferrer">
+              live
+            </a>
+          ) : null}
           {"article" in project && project.article ? (
             <a href={project.article} target="_blank" rel="noreferrer">
               article
